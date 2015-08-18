@@ -2,6 +2,8 @@
 
 用 Pen 的方式联系我
 
+![preview](http://r.loli.io/3e2Uv2.gif)
+
 ## 能做什么
 
 - 让某人联系你

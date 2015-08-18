@@ -40791,7 +40791,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n  font: 14px/1.4 Helvetica, serif;\n  background-color: #f9f9f9;\n}\n.single {\n  background-color: #fff;\n  min-height: 100vmin;\n}\n.container {\n  max-width: 600px;\n  margin: auto;\n}\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  font: 14px/1.4 Helvetica, serif;\n  background-color: #f0f0f0;\n}\n.single {\n  background-color: #fff;\n  min-height: 100vmin;\n}\n.container {\n  max-width: 600px;\n  margin: auto;\n}\n", ""]);
 
 	// exports
 
