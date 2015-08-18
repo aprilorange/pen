@@ -1,0 +1,27 @@
+{
+  "name": "pen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "assets-webpack-plugin": "^2.2.0",
+    "cjsx-loader": "^2.0.1",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.3",
+    "glob": "^5.0.14",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-serve": "^1.0.0",
+    "gulp-util": "^3.0.6",
+    "html-webpack-plugin": "^1.6.1",
+    "jsx-loader": "^0.13.2",
+    "react": "^0.13.3",
+    "webpack": "^1.11.0"
+  }
+}
