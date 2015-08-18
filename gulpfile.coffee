@@ -7,7 +7,6 @@ webpack = require 'webpack'
 gutil = require 'gulp-util'
 livereload = require 'gulp-livereload'
 serve = require 'gulp-serve'
-webpackAssets = require './webpack-assets'
 webpackConfig = require './webpack.config'
 
 removeCacheJS = ->
@@ -20,18 +19,14 @@ gulp.task 'serve', serve
   port: 2393
   root: ['.']
 
-gulp.task 'jade',  ->
-  gulp.src './src/jade/index.jade'
-    .pipe jade
-      locals:
-        assets: webpackAssets
-    .pipe gulp.dest '.'
+gulp.task 'html', ->
+  gulp.src './index.html'
     .pipe livereload()
 
 gulp.task 'webpack-dev', (cb) ->
   removeCacheJS()
   webpack webpackConfig, (err, stats) ->
-    gutil.log '[webpack]', stats.toString()
+    # gutil.log '[webpack]', stats.toString()
     livereload()
     cb()
 
@@ -39,16 +34,17 @@ gulp.task 'webpack', (cb) ->
   removeCacheJS()
   prodConfig = Object.create webpackConfig
   prodConfig.plugins = prodConfig.plugins.concat new webpack.optimize.UglifyJsPlugin()
-  webpack prodConfig.plugins, (err, stats) ->
+  webpack prodConfig, (err, stats) ->
     gutil.log '[webpack]', stats.toString()
     cb()
 
 gulp.task 'watch', ->
   livereload.listen()
   gulp.watch './src/coffee/*.coffee', ['webpack-dev']
-  gulp.watch './src/jade/*.jade', ['jade']
+  gulp.watch './index.html', ['html']
 
-gulp.task 'build-dev', ['jade', 'webpack-dev']
-gulp.task 'build', ['jade', 'webpack']
+
+gulp.task 'build-dev', ['webpack-dev']
+gulp.task 'build', ['webpack']
 
 gulp.task 'default', ['build-dev', 'watch', 'serve']

@@ -2,8 +2,8 @@ React = require 'react'
 
 App = React.createClass 
   render: ->
-    return <div>
-        hi!
-      </div>
+    <div>
+      hi there QAQ!!! XD
+    </div>
 
 React.render <App />, document.body
