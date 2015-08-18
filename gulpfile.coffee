@@ -42,6 +42,7 @@ gulp.task 'watch', ->
   livereload.listen()
   gulp.watch './src/coffee/*.coffee', ['webpack-dev']
   gulp.watch './index.html', ['html']
+  gulp.watch './src/styl/*.styl', ['webpack-dev']
 
 
 gulp.task 'build-dev', ['webpack-dev']

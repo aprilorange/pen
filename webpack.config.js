@@ -18,11 +18,12 @@ module.exports = {
     filename: "bundle.[hash].js"
   },
   resolve: {
-    extensions: ['', '.js', '.coffee']
+    extensions: ['', '.js', '.coffee', '.styl']
   },
   module: {
     loaders: [
-      { test: /\.coffee$/, loaders: ['coffee', 'cjsx'] }
+      { test: /\.coffee$/, loaders: ['coffee', 'cjsx'] },
+      { test: /\.styl$/, loaders: ['style', 'css', 'stylus'] }
     ]
   },
   plugins: [assetsPluginInstance, htmlPluginInstance]
